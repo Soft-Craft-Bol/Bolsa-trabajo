@@ -230,8 +230,8 @@ function RegistroPostulante() {
                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent appearance-none"
                   >
                     <option value="">Carrera*</option>
-                    <option value="licenciatura-informatica">LICENCIATURA EN INFORMATICA</option>
-                    <option value="licenciatura-sistemas">LICENCIATURA EN SISTEMAS</option>
+                    <option value="licenciatura-informatica">LICENCIATURA EN INGENIERIA INFORMATICA</option>
+                    <option value="licenciatura-sistemas">LICENCIATURA EN INGENIERIA DE SISTEMAS</option>
                   </select>
                   <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
                     <ChevronDownIcon />
