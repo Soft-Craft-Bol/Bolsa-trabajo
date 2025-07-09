@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
+    const navigate = useNavigate();
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    }
 
   return (
     <div className={`${darkMode ? "dark" : ""}`}>
@@ -43,7 +49,9 @@ export default function Navbar() {
               Admin
             </Link>
 
-            <button className="px-4 py-2 border border-orange-600 text-orange-600 rounded-lg hover:bg-orange-50 dark:hover:bg-gray-800 transition-all">
+            <button
+            onClick={() => handleNavigation("/registro-postulante")}
+             className="px-4 py-2 border border-orange-600 text-orange-600 rounded-lg hover:bg-orange-50 dark:hover:bg-gray-800 transition-all">
               Registrarse
             </button>
 
