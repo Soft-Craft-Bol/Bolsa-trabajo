@@ -1,14 +1,18 @@
 import { useState } from 'react'
-import Home from './page/home/Home'
-import Footer from './page/footer/Footer'
+import { BrowserRouter as Router } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <Home />
-      <Footer />
+      <Router>
+      <div className="h-screen">
+        <Navbar />
+        <AppRoutes />
+      </div>
+    </Router>
     </>
   )
 }

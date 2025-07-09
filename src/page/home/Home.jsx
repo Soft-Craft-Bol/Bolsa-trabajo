@@ -2,6 +2,8 @@ import React from 'react';
 import Servicios from './Servicios';
 import About from './About';
 import Stats from './Stats';
+import Footer from '../footer/Footer';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -35,18 +37,18 @@ export default function Home() {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4">
-          <a 
-            href="#register" 
+          <Link
+          to={"/registro-postulante"}
             className="px-8 py-3 bg-gradient-to-r from-amber-400 to-yellow-400 text-gray-900 rounded-lg text-lg font-semibold hover:from-amber-300 hover:to-yellow-300 transition-all shadow-lg text-center"
           >
             Comenzar Ahora
-          </a>
-          <a 
-            href="#explore" 
+          </Link>
+          <Link 
+            to="#explore" 
             className="px-8 py-3 border-2 border-white text-white rounded-lg text-lg font-semibold hover:bg-white/10 transition-colors text-center"
           >
             Ver Oportunidades
-          </a>
+          </Link>
         </div>
       </div>
       
@@ -64,6 +66,7 @@ export default function Home() {
 <Servicios/>
 <About/>
 <Stats/>
+<Footer/>
       </div> 
       
     );
