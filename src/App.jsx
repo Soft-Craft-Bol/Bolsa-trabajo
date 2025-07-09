@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import Home from './page/home/Home'
 import Footer from './page/footer/Footer'
 import './App.css'
+import RegistroPostulante from './page//forms/RegistroPostulante';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <Home />
+      <RegistroPostulante />
       <Footer />
     </>
   )
