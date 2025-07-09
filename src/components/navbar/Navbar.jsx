@@ -50,7 +50,7 @@ export default function Navbar() {
             </Link>
 
             <button
-            onClick={() => handleNavigation("/registro-postulante")}
+            onClick={() => handleNavigation("/registro")}
              className="px-4 py-2 border border-orange-600 text-orange-600 rounded-lg hover:bg-orange-50 dark:hover:bg-gray-800 transition-all">
               Registrarse
             </button>
