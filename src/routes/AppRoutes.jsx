@@ -11,6 +11,7 @@ export default function AppRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
         <Route path="/registro-postulante" element={<RegistroPostulante />} />
+        
         <Route path="/ofertas" element={<OfertaList/>}/>
         <Route path="/registro-empresa" element={<RegistroEmpresa />} />
         <Route path="/registro" element={<ElegirTipoCuenta />} />
