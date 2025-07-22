@@ -1,45 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 import OfertCard from '../../components/cards/OfertCard';
+import OfertaDetails from '../../components/cards/OfertaDetails';
 
 const ofertas = [
   {
-    photo: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg',
     title: 'Desarrollador Front-End',
-    companyName: 'Tech Innovations',
-    location: 'La Paz, Bolivia',
-    description: 'Buscamos un desarrollador front-end con experiencia en React y JavaScript.',
-    offerDate: '20 de Julio, 2025',
-    salary: '$2,500',
+    companyName: 'Microsoft Bolivia',
+    location: 'Cochabamba, Bolivia',
+    description: 'Únete a nuestro equipo para crear experiencias web modernas con React y TypeScript.',
+    offerDate: '5 de Julio, 2025',
+    salary: 'Bs. 12,000',
     isVerified: true,
+    contractType: 'Tiempo completo',
+    modality: 'Remoto',
+    recentlyViewed: true,
   },
   {
-    photo: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    title: 'Desarrollador Back-End',
-    companyName: 'Tech Innovations',
-    location: 'Cochabamba, Bolivia',
-    description: 'Buscamos un desarrollador back-end con experiencia en Node.js y MongoDB.',
-    offerDate: '22 de Julio, 2025',
-    salary: '$2,800',
-    isVerified: false,
+    photo: 'https://www.softcraftbol.com/assets/logoSoftCraft-yGORptqy.png',
+    title: 'Ingeniero de Software',
+    companyName: 'SOFTCRAFT',
+    location: 'Santa Cruz, Bolivia',
+    description: 'Buscamos ingeniero para desarrollo de algoritmos en CUDA y sistemas de IA.',
+    offerDate: '3 de Julio, 2025',
+    salary: 'Bs. 15,500',
+    isVerified: true,
+    contractType: 'Tiempo completo',
+    modality: 'Presencial',
+    recentlyViewed: false,
   },
-  // Puedes agregar más objetos aquí...
+  {
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg',
+    title: 'Internship Backend Developer',
+    companyName:'IBM',
+    location: 'La Paz, Bolivia',
+    description: 'Prácticas profesionales para estudiantes de sistemas en desarrollo backend con Java y Spring Boot.',
+    offerDate: '1 de Julio, 2025',
+    salary: 'Bs. 3,500',
+    isVerified: false,
+    contractType: 'Prácticas',
+    modality: 'Híbrido',
+    recentlyViewed: true,
+  },
 ];
 
-export default function OfertaList() {
+export default function OfertasList() {
+  const [selectedOffer, setSelectedOffer] = useState(null);
+
   return (
-    <div className="flex h-screen">
-      {/* Columna izquierda: tarjetas resumidas */}
-      <div className="w-1/2 overflow-y-auto border-r border-gray-200 p-6 space-y-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-screen">
+      {/* Columna izquierda */}
+      <div className="col-span-1 overflow-y-auto border-r">
         {ofertas.map((oferta, index) => (
-          <OfertCard key={`resumen-${index}`} {...oferta} />
+          <div
+            key={index}
+            onClick={() => setSelectedOffer(oferta)}
+            className="cursor-pointer hover:bg-gray-50"
+          >
+            <OfertCard {...oferta} />
+          </div>
         ))}
       </div>
 
-      {/* Columna derecha: detalles completos */}
-      <div className="w-1/2 overflow-y-auto p-6 space-y-6">
-        {ofertas.map((oferta, index) => (
-          <OfertCard key={`detalle-${index}`} {...oferta} />
-        ))}
+      {/* Columna derecha */}
+      <div className="col-span-2 overflow-y-auto">
+        <OfertaDetails oferta={selectedOffer} />
       </div>
     </div>
   );
