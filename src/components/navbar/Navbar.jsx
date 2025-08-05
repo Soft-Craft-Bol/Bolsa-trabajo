@@ -31,7 +31,7 @@ export default function Navbar() {
               Ofertas
             </Link>
             <Link
-              to="/empresas"
+              to="/list-empresas"
               className="hover:text-orange-600 transition-colors"
             >
               Empresas
